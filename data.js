@@ -11,7 +11,7 @@ export const spectrumData = [
         width: 20,
         details: `<strong>Operated by:</strong><br>UAB Bite Lietuva<br><br>
                       <strong>Bandwidth:</strong><br>20 MHz (2110 - 2130 MHz downlink and 1920 - 1940 MHz uplink)<br><br>
-                      <strong>Valid until:</strong><br>2026-02-28<br><br>
+                      <strong>Valid until:</strong><br>?<br><br>
                       <strong>Used for:</strong><br>LTE: EARFCN 100`
       },
       {
@@ -20,8 +20,9 @@ export const spectrumData = [
         width: 20,
         details: `<strong>Operated by:</strong><br>AB Telia Lietuva<br><br>
                       <strong>Bandwidth:</strong><br>20 MHz (2130 - 2150 MHz downlink and 1940 - 1960 MHz uplink)<br><br>
-                      <strong>Valid until:</strong><br>2026-02-23<br><br>
-                      <strong>Used for:</strong><br>LTE: EARFCN 300`
+                      <strong>Valid until:</strong><br>?<br><br>
+                      <strong>Used for:</strong><br>LTE: EARFCN 300<br>5G: NRARFCN 427250<br><br>
+                      <strong>Details:</strong><br>Some sites run pure 5G`
       },
       {
         type: "tele2",
@@ -29,9 +30,9 @@ export const spectrumData = [
         width: 20,
         details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
                       <strong>Bandwidth:</strong><br>20 MHz (2150 - 2170 MHz downlink and 1960 - 1980 MHz uplink)<br><br>
-                      <strong>Valid until:</strong><br>2026-03-06<br><br>
+                      <strong>Valid until:</strong><br>?<br><br>
                       <strong>Used for:</strong><br>LTE: EARFCN 500<br>5G: NRARFCN 432030<br><br>
-                      <strong>Details:</strong><br>Some sites run LTE/5G DSS`
+                      <strong>Details:</strong><br>Some sites run LTE/5G DSS (mostly near highways)`
       }
     ]
   },
@@ -73,9 +74,9 @@ export const spectrumData = [
       {
         type: "tele2",
         label: "Tele2",
-        width: 2.5,
+        width: 2.4,
         details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>2.5 MHz (1830 - 1832.4 MHz downlink and 1735 - 1747.4 MHz uplink)<br><br>
+                      <strong>Bandwidth:</strong><br>2.4 MHz (1830 - 1832.4 MHz downlink and 1735 - 1737.4 MHz uplink)<br><br>
                       <strong>Valid until:</strong><br>2032-10-31<br><br>
                       <strong>Details:</strong><br>sometimes used for 2G<br><br>
                       <strong>Used for:</strong><br>2G GSM: ARFCN 640, 643`
@@ -85,16 +86,16 @@ export const spectrumData = [
         label: "Tele2",
         width: 20,
         details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>20 MHz (1832.4 - 1852.4 MHz downlink and 1747.4 - 1747.4 MHz uplink)<br><br>
+                      <strong>Bandwidth:</strong><br>20 MHz (1832.4 - 1852.4 MHz downlink and 1737.4 - 1757.4 MHz uplink)<br><br>
                       <strong>Valid until:</strong><br>2032-10-31<br><br>
                       <strong>Used for:</strong><br>LTE: EARFCN 1574`
       },
       {
         type: "tele2",
         label: "Tele2",
-        width: 2.5,
+        width: 2.6,
         details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>2.5 MHz (1852.4 - 1855 MHz downlink and 1747.4 - 1760 MHz uplink)<br><br>
+                      <strong>Bandwidth:</strong><br>2.6 MHz (1852.4 - 1855 MHz downlink and 1757.4 - 1760 MHz uplink)<br><br>
                       <strong>Valid until:</strong><br>2032-10-31<br><br>
                       <strong>Details:</strong><br>sometimes used for 2G<br><br>
                       <strong>Used for:</strong><br>2G GSM: ARFCN 750, 751, 752, 753, 755`
@@ -267,12 +268,24 @@ export const spectrumData = [
     freqStart: "758 / 703 MHz",
     freqEnd: "788 / 733 MHz",
     blocks: [
+
       {
-        type: "unallocated",
-        label: "Unallocated",
-        width: 10,
-        details: `<strong>Bandwidth:</strong><br>10 MHz (758 - 768 MHz downlink and 703 - 713 MHz uplink)<br><br>
-              <strong>Details:</strong><br>Should be auctioned soon`
+        type: "tele2",
+        label: "Tele2",
+        width: 5,
+        details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
+                      <strong>Bandwidth:</strong><br>5 MHz (758 - 763 MHz downlink and 703 - 708 MHz uplink)<br><br>
+                      <strong>Valid until:</strong><br>?<br><br>
+                      <strong>Used for:</strong><br>?`
+      },
+      {
+        type: "bite",
+        label: "Bite",
+        width: 5,
+        details: `<strong>Operated by:</strong><br>UAB Bite Lietuva<br><br>
+                      <strong>Bandwidth:</strong><br>5 MHz (763 - 768 MHz downlink and 708 - 713 MHz uplink)<br><br>
+                      <strong>Valid until:</strong><br>?<br><br>
+                      <strong>Used for:</strong><br>?`
       },
       {
         type: "telia",
@@ -312,16 +325,22 @@ export const spectrumData = [
     freqEnd: "1512 MHz",
     blocks: [
       {
-        type: "unallocated",
-        label: "Ongoing Auction",
+        type: "telia",
+        label: "Telia",
         width: 20,
-        details: `<strong>Bandwidth:</strong><br>20 MHz (1432 - 1452 MHz)`
+        details: `<strong>Operated by:</strong><br>AB Telia Lietuva<br><br>
+                      <strong>Bandwidth:</strong><br>20 MHz (1432 - 1452 MHz)<br><br>
+                      <strong>Valid until:</strong><br>?<br><br>
+                      <strong>Used for:</strong><br>?`
       },
       {
-        type: "unallocated",
-        label: "Ongoing Auction",
+        type: "telia",
+        label: "Telia",
         width: 20,
-        details: `<strong>Bandwidth:</strong><br>20 MHz (1452 - 1472 MHz)`
+        details: `<strong>Operated by:</strong><br>AB Telia Lietuva<br><br>
+                      <strong>Bandwidth:</strong><br>20 MHz (1452 - 1472 MHz)<br><br>
+                      <strong>Valid until:</strong><br>?<br><br>
+                      <strong>Used for:</strong><br>?`
       },
       {
         type: "unallocated",
@@ -330,10 +349,13 @@ export const spectrumData = [
         details: `<strong>Bandwidth:</strong><br>20 MHz (1472 - 1492 MHz)`
       },
       {
-        type: "unallocated",
-        label: "Ongoing Auction",
+        type: "tele2",
+        label: "Tele2",
         width: 20,
-        details: `<strong>Bandwidth:</strong><br>20 MHz (1492 - 1512 MHz)`
+        details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
+                      <strong>Bandwidth:</strong><br>20 MHz (1492 - 1512 MHz)<br><br>
+                      <strong>Valid until:</strong><br>?<br><br>
+                      <strong>Used for:</strong><br>?`
       }
     ]
   },
@@ -397,25 +419,25 @@ export const spectrumData = [
         width: 10,
         details: `<strong>Bandwidth:</strong><br>10 MHz (2300 - 2310 MHz)`
       },
+      // {
+      //   type: "bite",
+      //   label: "Bite",
+      //   width: 20,
+      //   details: `<strong>Operated by:</strong><br>UAB Bite Lietuva<br><br>
+      //                 <strong>Bandwidth:</strong><br>20 MHz (2310 - 2330 MHz)<br><br>
+      //                 <strong>Valid until:</strong><br>2029-07-25<br><br>
+      //                 <strong>Used for:</strong><br>LTE: EARFCN 38850<br><br>
+      //                 <strong>Details:</strong><br>Spectrum block acquired after the acquisition of Mezon`
+      // },
       {
         type: "bite",
         label: "Bite",
-        width: 20,
+        width: 80,
         details: `<strong>Operated by:</strong><br>UAB Bite Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>20 MHz (2310 - 2330 MHz)<br><br>
+                      <strong>Bandwidth:</strong><br>80 MHz (2310 - 2390 MHz)<br><br>
                       <strong>Valid until:</strong><br>2029-07-25<br><br>
-                      <strong>Used for:</strong><br>LTE: EARFCN 38850<br><br>
-                      <strong>Details:</strong><br>Spectrum block acquired after the acquisition of Mezon`
-      },
-      {
-        type: "bite",
-        label: "Bite",
-        width: 60,
-        details: `<strong>Operated by:</strong><br>UAB Bite Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>60 MHz (2330 - 2390 MHz)<br><br>
-                      <strong>Valid until:</strong><br>2029-07-25<br><br>
-                      <strong>Used for:</strong><br>5G: NRARFCN 468250<br><br>
-                      <strong>Details:</strong><br>Spectrum block acquired after the acquisition of Mezon`
+                      <strong>Used for:</strong><br>5G: NRARFCN 464210<br><br>
+                      <strong>Details:</strong><br>Previously used for 20 MHz LTE (EARFCN 38850) and 60 MHz 5G NR (ARFCN 468250)<br>Reframed to 80 MHz 5G during 2026 Q2<br>Spectrum block acquired after the acquisition of Mezon`
       },
       {
         type: "unallocated",
@@ -439,7 +461,7 @@ export const spectrumData = [
         details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
                       <strong>Bandwidth:</strong><br>100 MHz (3400 - 3500 MHz)<br><br>
                       <strong>Valid until:</strong><br>2042-09-26<br><br>
-                      <strong>Used for:</strong><br>5G: NRARFCN 630000`
+                      <strong>Used for:</strong><br>5G: NRARFCN 629952`
       },
       {
         type: "telia",
