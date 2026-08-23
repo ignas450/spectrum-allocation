@@ -275,7 +275,7 @@ export const spectrumData = [
         width: 10,
         details: `<strong>Operated by:</strong><br>UAB Bite Lietuva<br><br>
                       <strong>Bandwidth:</strong><br>10 MHz (758 - 768 MHz downlink and 703 - 713 MHz uplink)<br><br>
-                      <strong>Used for:</strong><br>LTE: EARFCN 9360
+                      <strong>Used for:</strong><br>LTE: EARFCN 9360<br><br>
                       <strong>Details:</strong><br>Reframed from EARFCN 9435 to 9460 on 2026-08-24 around 1 AM nationwide. Started from west of Lithuania`
       },
       {
