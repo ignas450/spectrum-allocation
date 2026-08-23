@@ -270,22 +270,13 @@ export const spectrumData = [
     blocks: [
 
       {
-        type: "tele2",
-        label: "Tele2",
-        width: 5,
-        details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>5 MHz (758 - 763 MHz downlink and 703 - 708 MHz uplink)<br><br>
-                      <strong>Valid until:</strong><br>?<br><br>
-                      <strong>Used for:</strong><br>?`
-      },
-      {
         type: "bite",
         label: "Bite",
-        width: 5,
+        width: 10,
         details: `<strong>Operated by:</strong><br>UAB Bite Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>5 MHz (763 - 768 MHz downlink and 708 - 713 MHz uplink)<br><br>
-                      <strong>Valid until:</strong><br>?<br><br>
-                      <strong>Used for:</strong><br>?`
+                      <strong>Bandwidth:</strong><br>10 MHz (758 - 768 MHz downlink and 703 - 713 MHz uplink)<br><br>
+                      <strong>Used for:</strong><br>LTE: EARFCN 9360
+                      <strong>Details:</strong><br>Reframed from EARFCN 9435 to 9460 on 2026-08-24 around 1 AM nationwide. Started from west of Lithuania`
       },
       {
         type: "telia",
@@ -298,26 +289,16 @@ export const spectrumData = [
                       <strong>Details:</strong><br>Previously used for LTE/5G DSS; primarily used for 5G only.`
       },
       {
-        type: "bite",
-        label: "Bite",
-        width: 5,
-        details: `<strong>Operated by:</strong><br>UAB Bite Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>10 MHz (778 - 783 MHz downlink and 723 - 728 MHz uplink)<br><br>
-                      <strong>Valid until:</strong><br>2042-10-11<br><br>
-                      <strong>Used for:</strong><br>LTE: EARFCN 9435`
-      },
-      {
         type: "tele2",
         label: "Tele2",
-        width: 5,
+        width: 10,
         details: `<strong>Operated by:</strong><br>UAB Tele2 Lietuva<br><br>
-                      <strong>Bandwidth:</strong><br>10 MHz (783 - 788 MHz downlink and 728 - 733 MHz uplink)<br><br>
-                      <strong>Valid until:</strong><br>2042-09-26<br><br>
+                      <strong>Bandwidth:</strong><br>10 MHz (778 - 788 MHz downlink and 723 - 733 MHz uplink)<br><br>
                       <strong>Used for:</strong><br>LTE: EARFCN 9485`
       }
     ]
   },
-
+  
   {
     id: "B32",
     title: "Bands B32, B75, n75 (SDL)",
