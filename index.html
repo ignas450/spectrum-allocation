@@ -8,8 +8,78 @@
 </head>
 <body>
   <h1>Cellular Spectrum Allocation in Lithuania</h1>
-  <div class="spacer"></div>
-  <div id="spectrums"></div>
+
+  <div class="top-panels">
+    <section id="channelLookup">
+      <h2>Highlight spectrum (BETA)</h2>
+      <p class="lookup-help">Choose a lookup method to highlight a section of the spectrum.</p>
+      <form id="channelLookupForm" class="lookup-form">
+        <label>
+          Highlight by
+          <select id="lookupMode">
+            <option value="lte-bandwidth">EARFCN + bandwidth</option>
+            <option value="frequency">Start/end frequency</option>
+          </select>
+        </label>
+        <div class="lookup-inputs">
+          <label class="mode-bandwidth"><span id="channelTypeLabel">EARFCN</span>
+            <input id="channelNumber" type="text" inputmode="numeric" placeholder="e.g. 1348" />
+          </label>
+          <label class="mode-bandwidth">Bandwidth (MHz)
+            <input id="channelBandwidth" type="text" inputmode="decimal" placeholder="e.g. 20" />
+          </label>
+          <label class="mode-frequency">Start frequency (MHz)
+            <input id="startFrequency" type="text" inputmode="decimal" placeholder="e.g. 1830" />
+          </label>
+          <label class="mode-frequency">End frequency (MHz)
+            <input id="endFrequency" type="text" inputmode="decimal" placeholder="e.g. 1850" />
+          </label>
+        </div>
+        <button type="submit">Find and highlight</button>
+      </form>
+      <p id="channelLookupResult" class="lookup-result" aria-live="polite"></p>
+    </section>
+
+    <section id="allocationSummary">
+      <div class="summary-heading">
+        <h2>Spectrum ownership overview</h2>
+      </div>
+      <div id="bandFilter" class="band-tabs" role="tablist" aria-label="Spectrum bands">
+        <button type="button" class="band-tab active" data-filter="overall" role="tab" aria-selected="true">Overall</button>
+        <button type="button" class="band-tab" data-filter="lowband" role="tab" aria-selected="false">Low-bands</button>
+        <button type="button" class="band-tab" data-filter="midband" role="tab" aria-selected="false">Mid-bands</button>
+        <button type="button" class="band-tab" data-filter="highband" role="tab" aria-selected="false">High-bands</button>
+      </div>
+      <div class="pie-layout">
+        <div id="pieChart" class="pie-chart" role="img" aria-label="Carrier spectrum share pie chart"></div>
+        <div id="pieLegend" class="pie-legend"></div>
+      </div>
+    </section>
+  </div>
+  <div class="controls">
+    <button id="toggleViewBtn" aria-pressed="false">Switch to simplified view</button>
+  </div>
+  <section id="allocationDetails">
+    <!-- <h2>Spectrum allocation</h2> -->
+    <div id="spectrums"></div>
+  </section>
+
+  <section id="pageInfo" class="page-info">
+    <dl>
+      <div>
+        <dt>Last updated</dt>
+        <dd>August 27, 2026</dd>
+      </div>
+      <div>
+        <dt>Sources</dt>
+        <dd>
+          <a href="https://www.rrt.lt/" target="_blank" rel="noopener noreferrer">Communications Regulatory Authority of Lithuania (RRT)</a>
+        </dd>
+      </div>
+    </dl>
+    <!-- <a class="archive-link" href="archive/index.html">View spectrum history</a> -->
+  </section>
+
   <script type="module" src="script.js"></script>
 </body>
 </html>
