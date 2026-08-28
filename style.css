@@ -76,6 +76,10 @@ section {
   margin: 0 0 10px;
 }
 
+.band-heading .toggle-view-btn {
+  margin: 0 0 10px auto;
+}
+
 #allocationSummary {
   max-width: none;
   margin: 0 0 30px;
@@ -288,18 +292,6 @@ section {
   font-size: 12px;
 }
 
-.version-indicator {
-  display: inline-block;
-  align-self: center;
-  border-radius: 4px;
-  padding: 3px 7px;
-  background: #d97706;
-  color: #fff;
-  font-size: 11px;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
 .bite       { background: #008000; }
 .telia      { background: #84c;    }
 .tele2      { background: #000;     }
@@ -337,52 +329,20 @@ section {
 }
 
 
-.controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  margin: 0 auto 16px;
-}
-
-#toggleViewBtn {
-  background: #333;
-  color: #fff;
-  border: 1px solid #555;
-  padding: 10px 16px;
-  border-radius: 6px;
+.toggle-view-btn {
+  background: none;
+  color: #bde4ff;
+  border: 0;
+  padding: 0;
   cursor: pointer;
-  font-size: 15px;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-#toggleViewBtn[aria-pressed="true"] {
-  background: #444;
-  border-color: #666;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08), 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.button-link {
-  display: inline-block;
-  background: #222;
-  color: #fff;
-  border: 1px solid #333;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
+  font: inherit;
   font-size: 14px;
   text-decoration: none;
 }
 
-.button-link:hover,
-.button-link:focus-visible {
-  background: #333;
-}
-
-#toggleViewBtn:hover,
-#toggleViewBtn:focus-visible {
-  background: #4a4a4a;
+.toggle-view-btn:hover,
+.toggle-view-btn:focus-visible {
+  text-decoration: underline;
 }
 
 .page-info {
@@ -501,10 +461,6 @@ section {
 @media (max-width: 600px) {
   .top-panels { grid-template-columns: 1fr; gap: 0; }
   .top-panels > section { margin-bottom: 0; }
-  .controls {
-    min-height: 0;
-    margin: 8px auto 12px;
-  }
   .band-tabs {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 3px;

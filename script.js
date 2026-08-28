@@ -11,7 +11,6 @@ const [{ spectrumData: fullData }, { simplifiedData }] = await Promise.all([
 ]);
 
 const container = document.getElementById('spectrums');
-const toggleBtn = document.getElementById('toggleViewBtn');
 const bandFilter = document.getElementById('bandFilter');
 const pieChart = document.getElementById('pieChart');
 const pieLegend = document.getElementById('pieLegend');
@@ -118,11 +117,16 @@ function renderChart(data) {
     heading.innerHTML = `<h2>${band.title}</h2>`;
 
     if (hasAlternateVersion(band.id)) {
-      const alternateView = document.createElement('span');
-      alternateView.className = 'version-indicator';
-      alternateView.textContent = simplified ? 'Simplified view' : 'Full view';
-      alternateView.title = `Also available in ${alternateView.textContent.toLowerCase()}`;
-      heading.appendChild(alternateView);
+      const toggleButton = document.createElement('button');
+      toggleButton.className = 'toggle-view-btn';
+      toggleButton.setAttribute('aria-pressed', simplified ? 'true' : 'false');
+      toggleButton.textContent = simplified ? 'Switch to full view' : 'Switch to simplifed view';
+      toggleButton.addEventListener('click', () => {
+        simplified = !simplified;
+        if (simplified) renderSimplified();
+        else renderFull();
+      });
+      heading.appendChild(toggleButton);
     }
     section.appendChild(heading);
 
@@ -268,16 +272,6 @@ container.addEventListener('click', e => {
   det.classList.add('visible');
 });
 
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    simplified = !simplified;
-    toggleBtn.setAttribute('aria-pressed', simplified ? 'true' : 'false');
-    toggleBtn.textContent = simplified ? 'Switch to full view' : 'Switch to simplified view';
-    if (simplified) renderSimplified();
-    else renderFull();
-  });
-}
-
 if (bandFilter) {
   bandFilter.addEventListener('click', event => {
     const tab = event.target.closest('.band-tab');
@@ -343,7 +337,5 @@ lookupForm.addEventListener('submit', event => {
 });
 
 lookupMode.dispatchEvent(new Event('change'));
-toggleBtn.setAttribute('aria-pressed', simplified ? 'true' : 'false');
-toggleBtn.textContent = simplified ? 'Switch to full view' : 'Switch to simplified view';
 if (simplified) renderSimplified();
 else renderFull();
