@@ -1,7 +1,7 @@
 [
   {
     "id": "2100",
-    "title": "Band B1 (2100 MHz FDD)",
+    "title": "Band B1, n1 (2100 MHz FDD)",
     "type": "FDD",
     "startFrequency": 2110,
     "endFrequency": 2170,
@@ -291,10 +291,8 @@
         "uplinkEndFrequency": 885.1,
         "validUntil": "2032-10-31",
         "usedFor": {
-          "uarfcns": ["2938 (historical)"],
           "earfcns": [3476]
-        },
-        "details": "Previously used for 3G, now used for 4G LTE"
+        }
       },
       {
         "type": "bite",
@@ -346,9 +344,8 @@
         "uplinkEndFrequency": 903.3,
         "validUntil": "2032-10-31",
         "usedFor": {
-          "earfcns": [3617]
-        },
-        "details": "~8 MHz for 4G LTE (trimmed 10 MHz)"
+          "arfcns": [54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66]
+        }
       },
       {
         "type": "tele2",
@@ -360,9 +357,8 @@
         "uplinkEndFrequency": 909.9,
         "validUntil": "2032-10-31",
         "usedFor": {
-          "arfcns": [54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66]
-        },
-        "details": "~8 MHz for 4G LTE (trimmed 10 MHz)"
+          "arfcns": ["67-99"]
+        }
       },
       {
         "type": "tele2",
@@ -374,7 +370,6 @@
         "uplinkEndFrequency": 914.9,
         "validUntil": "2032-10-31",
         "usedFor": {
-          "uarfcns": ["3087 (historical)"], 
           "earfcns": [3774]
         }
       }
@@ -420,6 +415,7 @@
         "uplinkEndFrequency": 914.9,
         "validUntil": "2032-10-31",
         "usedFor": {
+          "arfcns": ["67-99"],
           "earfcns": [3774]
         },
         "details": "5 MHz for B8 4G LTE, remaining for 2G GSM"
@@ -478,7 +474,7 @@
   },
   {
     "id": "700",
-    "title": "Band B28 (700 MHz FDD)",
+    "title": "Band B28, n28 700 MHz FDD)",
     "type": "FDD",
     "startFrequency": 758,
     "endFrequency": 788,
