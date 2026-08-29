@@ -1,0 +1,689 @@
+[
+  {
+    "id": "2100",
+    "title": "Band B1 (2100 MHz FDD)",
+    "type": "FDD",
+    "startFrequency": 2110,
+    "endFrequency": 2170,
+    "uplinkStartFrequency": 1920,
+    "uplinkEndFrequency": 1980,
+    "blocks": [
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 2110,
+        "endFrequency": 2130,
+        "uplinkStartFrequency": 1920,
+        "uplinkEndFrequency": 1940,
+        "validUntil": "2042-10-31",
+        "usedFor": {
+          "earfcns": [100]
+        }
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 2130,
+        "endFrequency": 2150,
+        "uplinkStartFrequency": 1940,
+        "uplinkEndFrequency": 1960,
+        "validUntil": "2042-10-31",
+        "usedFor": {
+          "earfcns": [300],
+          "nrarfcns": [427250]
+        },
+        "details": "Mostly used for 4G LTE, some sites run 5G"
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 2150,
+        "endFrequency": 2170,
+        "uplinkStartFrequency": 1960,
+        "uplinkEndFrequency": 1980,
+        "validUntil": "2042-10-31",
+        "usedFor": {
+          "earfcns": [500],
+          "nrarfcns": [432030]
+        },
+        "details": "Mostly used for 4G LTE, some sites run 5G (mostly near highways)"
+      }
+    ]
+  },
+  {
+    "id": "1800",
+    "title": "Band B3 (1800 MHz FDD)",
+    "type": "FDD",
+    "startFrequency": 1805,
+    "endFrequency": 1880,
+    "uplinkStartFrequency": 1710,
+    "uplinkEndFrequency": 1785,
+    "blocks": [
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 1805,
+        "endFrequency": 1809.8,
+        "uplinkStartFrequency": 1710,
+        "uplinkEndFrequency": 1714.8,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [531, 532, 533, 534]
+        },
+        "details": "sometimes used for 2G (most common indoor)"
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 1809.8,
+        "endFrequency": 1830,
+        "uplinkStartFrequency": 1714.8,
+        "uplinkEndFrequency": 1735,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "earfcns": [1348]
+        },
+        "details": "20 MHz for 4G LTE, 0.2 unused pretty much"
+      },
+      {
+        "type": "tele2",
+        "owner": "T2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 1830,
+        "endFrequency": 1832.4,
+        "uplinkStartFrequency": 1735,
+        "uplinkEndFrequency": 1737.4,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [640, 643]
+        },
+        "details": "sometimes used for 2G (most common indoor)"
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 1832.4,
+        "endFrequency": 1852.4,
+        "uplinkStartFrequency": 1737.4,
+        "uplinkEndFrequency": 1757.4,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "earfcns": [1574]
+        }
+      },
+      {
+        "type": "tele2",
+        "owner": "T2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 1852.4,
+        "endFrequency": 1855,
+        "uplinkStartFrequency": 1757.4,
+        "uplinkEndFrequency": 1760,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [750, 751, 752, 753, 755]
+        },
+        "details": "sometimes used for 2G (most common indoor)"
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 1855,
+        "endFrequency": 1860,
+        "uplinkStartFrequency": 1760,
+        "uplinkEndFrequency": 1765,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "earfcns": [1733]
+        },
+        "details": "20+5 MHz split as separate 4G LTE carriers"
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 1860,
+        "endFrequency": 1880,
+        "uplinkStartFrequency": 1765,
+        "uplinkEndFrequency": 1785,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "earfcns": [1850]
+        },
+        "details": "20+5 MHz split as separate 4G LTE carriers"
+      }
+    ],
+    "simplified": [
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 1805,
+        "endFrequency": 1830,
+        "uplinkStartFrequency": 1710,
+        "uplinkEndFrequency": 1735,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [531, 532, 533, 534],
+          "earfcns": [1348]
+        },
+        "details": "20 MHz for B3 4G LTE, remaining sometimes used for 2G GSM (most common indoor)"
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 1830,
+        "endFrequency": 1855,
+        "uplinkStartFrequency": 1735,
+        "uplinkEndFrequency": 1760,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [640, 643, 750, 751, 752, 753, 755],
+          "earfcns": [1574]
+        },
+        "details": "20 MHz for B3 4G LTE, remaining sometimes used for 2G GSM (most common indoor)"
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 1855,
+        "endFrequency": 1880,
+        "uplinkStartFrequency": 1760,
+        "uplinkEndFrequency": 1785,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "earfcns": [1733, 1850]
+        },
+        "details": "20+5 MHz split as separate 4G LTE carriers"
+      }
+    ]
+  },
+  {
+    "id": "2600",
+    "title": "Band B7 (2600 MHz FDD)",
+    "type": "FDD",
+    "startFrequency": 2620,
+    "endFrequency": 2690,
+    "uplinkStartFrequency": 2500,
+    "uplinkEndFrequency": 2570,
+    "blocks": [
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 2620,
+        "endFrequency": 2640,
+        "uplinkStartFrequency": 2500,
+        "uplinkEndFrequency": 2520,
+        "validUntil": "2027-08-29",
+        "usedFor": {
+          "earfcns": [2850]
+        }
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 2640,
+        "endFrequency": 2660,
+        "uplinkStartFrequency": 2520,
+        "uplinkEndFrequency": 2540,
+        "validUntil": "2027-08-29",
+        "usedFor": {
+          "earfcns": [3050]
+        }
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 2660,
+        "endFrequency": 2680,
+        "uplinkStartFrequency": 2540,
+        "uplinkEndFrequency": 2560,
+        "validUntil": "2027-08-29",
+        "usedFor": {
+          "earfcns": [3250]
+        },
+        "details": "20+10 MHz split as separate 4G LTE carriers\n10 MHz Spectrum block acquired after the acquisition of Mezon"
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 2680,
+        "endFrequency": 2690,
+        "uplinkStartFrequency": 2560,
+        "uplinkEndFrequency": 2570,
+        "validUntil": "2027-08-29",
+        "usedFor": {
+          "earfcns": [3394]
+        },
+        "details": "20+10 MHz split as separate 4G LTE carriers\n10 MHz Spectrum block acquired after the acquisition of Mezon"
+      }
+    ]
+  },
+  {
+    "id": "900",
+    "title": "Band B8 (900 MHz FDD)",
+    "type": "FDD",
+    "startFrequency": 925.1,
+    "endFrequency": 960.9,
+    "uplinkStartFrequency": 880.1,
+    "uplinkEndFrequency": 915.9,
+    "blocks": [
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 925.1,
+        "endFrequency": 930.1,
+        "uplinkStartFrequency": 880.1,
+        "uplinkEndFrequency": 885.1,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "uarfcns": ["2938 (historical)"],
+          "earfcns": [3476]
+        },
+        "details": "Previously used for 3G, now used for 4G LTE"
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 930.1,
+        "endFrequency": 936.7,
+        "uplinkStartFrequency": 885.1,
+        "uplinkEndFrequency": 891.7,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [1, 3, 5, 7, 1001, 1003, 1005, 1007, 1009, 1011, 1013, 1015, 1017, 1019, 1021, 1023]
+        }
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 936.7,
+        "endFrequency": 937.7,
+        "uplinkStartFrequency": 891.7,
+        "uplinkEndFrequency": 892.7,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [9, 10, 11, 12, 13]
+        }
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "UAB Telia Lietuva",
+        "startFrequency": 937.7,
+        "endFrequency": 945.9,
+        "uplinkStartFrequency": 892.7,
+        "uplinkEndFrequency": 900.9,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "earfcns": [3617]
+        },
+        "details": "~8 MHz for 4G LTE (trimmed 10 MHz)"
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "UAB Telia Lietuva",
+        "startFrequency": 945.9,
+        "endFrequency": 948.3,
+        "uplinkStartFrequency": 900.9,
+        "uplinkEndFrequency": 903.3,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "earfcns": [3617]
+        },
+        "details": "~8 MHz for 4G LTE (trimmed 10 MHz)"
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 948.3,
+        "endFrequency": 954.9,
+        "uplinkStartFrequency": 903.3,
+        "uplinkEndFrequency": 909.9,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66]
+        },
+        "details": "~8 MHz for 4G LTE (trimmed 10 MHz)"
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 954.9,
+        "endFrequency": 959.9,
+        "uplinkStartFrequency": 909.9,
+        "uplinkEndFrequency": 914.9,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "uarfcns": ["3087 (historical)"], 
+          "earfcns": [3774]
+        }
+      }
+    ],
+    "simplified": [
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 925.1,
+        "endFrequency": 936.7,
+        "uplinkStartFrequency": 880.1,
+        "uplinkEndFrequency": 891.7,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [1, 3, 5, 7, 1001, 1003, 1005, 1007, 1009, 1011, 1013, 1015, 1017, 1019, 1021, 1023],
+          "earfcns": [3476]
+        },
+        "details": "5 MHz for B8 4G LTE, remaining for 2G GSM"
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "UAB Telia Lietuva",
+        "startFrequency": 936.7,
+        "endFrequency": 948.3,
+        "uplinkStartFrequency": 891.7,
+        "uplinkEndFrequency": 903.3,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "arfcns": [9, 10, 11, 12, 13, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66],
+          "earfcns": [3617]
+        },
+        "details": "~8 MHz for B8 4G LTE (trimmed 10 MHz), remaining for 2G GSM"
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 948.3,
+        "endFrequency": 959.9,
+        "uplinkStartFrequency": 903.3,
+        "uplinkEndFrequency": 914.9,
+        "validUntil": "2032-10-31",
+        "usedFor": {
+          "earfcns": [3774]
+        },
+        "details": "5 MHz for B8 4G LTE, remaining for 2G GSM"
+      }
+    ]
+  },
+  {
+    "id": "800",
+    "title": "Band B20 (800 MHz FDD)",
+    "type": "FDD",
+    "startFrequency": 791,
+    "endFrequency": 821,
+    "uplinkStartFrequency": 832,
+    "uplinkEndFrequency": 862,
+    "blocks": [
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 791,
+        "endFrequency": 801,
+        "uplinkStartFrequency": 832,
+        "uplinkEndFrequency": 842,
+        "validUntil": "2030-07-01",
+        "usedFor": {
+          "earfcns": [6200]
+        }
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 801,
+        "endFrequency": 811,
+        "uplinkStartFrequency": 842,
+        "uplinkEndFrequency": 852,
+        "validUntil": "2030-07-01",
+        "usedFor": {
+          "earfcns": [6300]
+        }
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 811,
+        "endFrequency": 821,
+        "uplinkStartFrequency": 852,
+        "uplinkEndFrequency": 862,
+        "validUntil": "2030-07-01",
+        "usedFor": {
+          "earfcns": [6400]
+        }
+      }
+    ]
+  },
+  {
+    "id": "700",
+    "title": "Band B28 (700 MHz FDD)",
+    "type": "FDD",
+    "startFrequency": 758,
+    "endFrequency": 788,
+    "uplinkStartFrequency": 703,
+    "uplinkEndFrequency": 733,
+    "blocks": [
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 758,
+        "endFrequency": 768,
+        "uplinkStartFrequency": 703,
+        "uplinkEndFrequency": 713,
+        "validUntil": "2042-10-31",
+        "usedFor": {
+          "earfcns": [9260]
+        },
+        "details": "Reframed from EARFCN 9435 to 9260 on 2026-08-24 around 1 AM nationwide. Started from west of Lithuania"
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 768,
+        "endFrequency": 778,
+        "uplinkStartFrequency": 713,
+        "uplinkEndFrequency": 723,
+        "validUntil": "2042-10-31",
+        "usedFor": {
+          "earfcns": ["9360 (historical)"],
+          "nrarfcns": [154570]
+        },
+        "details": "Previously used for LTE/5G DSS, now used for 5G only"
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 778,
+        "endFrequency": 788,
+        "uplinkStartFrequency": 723,
+        "uplinkEndFrequency": 733,
+        "validUntil": "2042-10-31",
+        "usedFor": {
+          "earfcns": [9460]
+        },
+        "details": "Reframed from EARFCN 9485 (5 MHz) to 9460 (10 MHz) on around 2026-08-26"
+      }
+    ]
+  },
+  {
+    "id": "1500",
+    "title": "B32, n75 (1500 MHz SDL)",
+    "type": "SDL",
+    "startFrequency": 1432,
+    "endFrequency": 1512,
+    "blocks": [
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 1432,
+        "endFrequency": 1452,
+        "validUntil": "2042-10-31",
+        "usedFor": "?"
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "AB Telia Lietuva",
+        "startFrequency": 1452,
+        "endFrequency": 1472,
+        "validUntil": "2042-10-31",
+        "usedFor": "?"
+      },
+      {
+        "type": "unallocated",
+        "owner": "Unallocated",
+        "startFrequency": 1472,
+        "endFrequency": 1492
+      },
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 1492,
+        "endFrequency": 1512,
+        "validUntil": "2042-10-31",
+        "usedFor": "?"
+      }
+    ]
+  },
+  {
+    "id": "2500",
+    "title": "Band B38 (2500 MHz TDD)",
+    "type": "TDD",
+    "startFrequency": 2570,
+    "endFrequency": 2620,
+    "blocks": [
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 2570,
+        "endFrequency": 2575,
+        "validUntil": "2030-01-15",
+        "details": "Unused\nSpectrum block acquired after the acquisition of Mezon"
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 2575,
+        "endFrequency": 2595,
+        "validUntil": "2030-01-15",
+        "usedFor": {
+          "earfcns": [37900]
+        },
+        "details": "Rarely used for LTE\nSpectrum block acquired after the acquisition of Mezon"
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 2595,
+        "endFrequency": 2615,
+        "validUntil": "2030-01-15",
+        "usedFor": {
+          "earfcns": [38098]
+        },
+        "details": "Rarely used for LTE\nSpectrum block acquired after the acquisition of Mezon"
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 2615,
+        "endFrequency": 2620,
+        "validUntil": "2030-01-15",
+        "details": "Unused\nSpectrum block acquired after the acquisition of Mezon"
+      }
+    ]
+  },
+  {
+    "id": "2300",
+    "title": "Band n40 (2300 MHz TDD)",
+    "type": "TDD",
+    "startFrequency": 2310,
+    "endFrequency": 2490,
+    "blocks": [
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 2310,
+        "endFrequency": 2390,
+        "validUntil": "2029-07-25",
+        "usedFor": {
+          "nrarfcns": [464210]
+        },
+        "details": "Previously used for 20 MHz LTE (EARFCN 38850) and 60 MHz 5G NR (ARFCN 468250)\nReframed to 80 MHz 5G during 2026 Q2\nSpectrum block acquired after the acquisition of Mezon"
+      }
+    ]
+  },
+  {
+    "id": "3600",
+    "title": "Band n78 (3600 MHz TDD)",
+    "type": "TDD",
+    "startFrequency": 3400,
+    "endFrequency": 3700,
+    "blocks": [
+      {
+        "type": "tele2",
+        "owner": "Tele2",
+        "ownerLong": "UAB Tele2 Lietuva",
+        "startFrequency": 3400,
+        "endFrequency": 3500,
+        "validUntil": "2042-09-26",
+        "usedFor": {
+          "nrarfcns": [629952]
+        }
+      },
+      {
+        "type": "telia",
+        "owner": "Telia",
+        "ownerLong": "UAB Telia Lietuva",
+        "startFrequency": 3500,
+        "endFrequency": 3600,
+        "validUntil": "2042-09-26",
+        "usedFor": {
+          "nrarfcns": [634080]
+        }
+      },
+      {
+        "type": "bite",
+        "owner": "Bite",
+        "ownerLong": "UAB Bite Lietuva",
+        "startFrequency": 3500,
+        "endFrequency": 3600,
+        "validUntil": "2042-09-26",
+        "usedFor": {
+          "nrarfcns": [640704]
+        }
+      }
+    ]
+  }
+]

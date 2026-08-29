@@ -1,14 +1,13 @@
 const archiveVersion = new URLSearchParams(window.location.search).get('archive');
 const dataPath = archiveVersion
-  ? `./archive/${encodeURIComponent(archiveVersion)}/data.js`
-  : './data.js';
-const simplifiedDataPath = archiveVersion
-  ? `./archive/${encodeURIComponent(archiveVersion)}/dataSimplified.js`
-  : './dataSimplified.js';
-const [{ spectrumData: fullData }, { simplifiedData }] = await Promise.all([
-  import(dataPath),
-  import(simplifiedDataPath)
-]);
+  ? `./archive/${encodeURIComponent(archiveVersion)}/data.json`
+  : './data.json';
+const response = await fetch(dataPath);
+if (!response.ok) throw new Error(`Unable to load spectrum data (${response.status})`);
+const fullData = await response.json();
+const simplifiedData = fullData.map(band => band.simplified
+  ? { ...band, blocks: band.simplified }
+  : band);
 
 const container = document.getElementById('spectrums');
 const bandFilter = document.getElementById('bandFilter');
@@ -32,15 +31,15 @@ const carrierColors = {
 };
 
 const bandGroups = {
-  lowband: new Set(['B8', 'B20', 'B28']),
-  midband: new Set(['B1', 'B3', 'B7', 'B32', 'B38', 'B40']),
-  highband: new Set(['B78'])
+  lowband: new Set(['900', '800', '700']),
+  midband: new Set(['2100', '1800', '2600', '1500', '2500', '2300']),
+  highband: new Set(['3600'])
 };
 
 const lteChannelBands = {
-  B1: [2110, 0, 599], B3: [1805, 1200, 1949], B7: [2620, 2750, 3449], B8: [925, 3450, 3799],
-  B20: [791, 6150, 6449], B28: [758, 9210, 9659], B32: [1452, 9920, 10359],
-  B38: [2570, 37750, 38249], B40: [2300, 38650, 39649]
+  2100: [2110, 0, 599], 1800: [1805, 1200, 1949], 2600: [2620, 2750, 3449], 900: [925, 3450, 3799],
+  700: [791, 6150, 6449], 800: [758, 9210, 9659], 1500: [1452, 9920, 10359],
+  2500: [2570, 37750, 38249], 2300: [2300, 38650, 39649]
 };
 
 function channelFrequency(band, channel) {
@@ -51,8 +50,8 @@ function channelFrequency(band, channel) {
 function detectBand(start, end) {
   const data = simplified ? getSimplifiedWithFallback() : fullData;
   return data.find(band => {
-    const bandStart = Number.parseFloat(band.freqStart);
-    const bandEnd = Number.parseFloat(band.freqEnd);
+    const bandStart = band.startFrequency;
+    const bandEnd = band.endFrequency;
     return lteChannelBands[band.id] && start < bandEnd && end > bandStart;
   })?.id;
 }
@@ -75,21 +74,20 @@ function applyChannelHighlight() {
   const chart = section.querySelector('.chart');
   const bandData = (simplified ? getSimplifiedWithFallback() : fullData).find(item => item.id === band);
   if (!bandData) return;
-  const bandStart = Number.parseFloat(bandData.freqStart);
+  const bandStart = bandData.startFrequency;
   const blocks = [...chart.querySelectorAll('.block')];
-  const totalWidth = blocks.reduce((sum, block) => sum + Number(block.dataset.width), 0);
+  const totalWidth = blocks.reduce((sum, block) => sum + Number(block.dataset.end) - Number(block.dataset.start), 0);
   const frequencyToPixels = frequency => {
-    let currentFrequency = bandStart;
     const chartLeft = chart.getBoundingClientRect().left;
     for (const block of blocks) {
-      const blockWidth = Number(block.dataset.width);
-      const blockEnd = currentFrequency + blockWidth;
-      if (frequency <= blockEnd) {
+      const blockStartFrequency = Number(block.dataset.start);
+      const blockEndFrequency = Number(block.dataset.end);
+      const blockWidth = blockEndFrequency - blockStartFrequency;
+      if (frequency <= blockEndFrequency) {
         const rect = block.getBoundingClientRect();
-        const ratio = Math.max(0, Math.min(1, (frequency - currentFrequency) / blockWidth));
+        const ratio = Math.max(0, Math.min(1, (frequency - blockStartFrequency) / blockWidth));
         return rect.left - chartLeft + rect.width * ratio;
       }
-      currentFrequency = blockEnd;
     }
     const lastRect = blocks[blocks.length - 1].getBoundingClientRect();
     return lastRect.right - chartLeft;
@@ -105,6 +103,22 @@ function applyChannelHighlight() {
 
 function clearContainer() {
   container.innerHTML = '';
+}
+
+function formatBandwidth(value) {
+  return Number(value.toFixed(3)).toString();
+}
+
+function formatChannelDetails(block) {
+  const channels = block.usedFor && typeof block.usedFor === 'object'
+    ? block.usedFor
+    : block;
+  return [
+    channels.arfcns?.length && `2G GSM: ARFCN ${channels.arfcns.join(', ')}`,
+    channels.earfcns?.length && `4G LTE: EARFCN ${channels.earfcns.join(', ')}`,
+    channels.nrarfcns?.length && `5G: ARFCN ${channels.nrarfcns.join(', ')}`,
+    channels.uarfcns?.length && `3G: UARFCN ${channels.uarfcns.join(', ')}`
+  ].filter(Boolean).join('<br>');
 }
 
 function renderChart(data) {
@@ -135,26 +149,38 @@ function renderChart(data) {
     chart.dataset.band = band.id;
 
     band.blocks.forEach(b => {
+      const blockWidth = b.endFrequency - b.startFrequency;
       const blk = document.createElement('div');
       blk.className = `block ${b.type}`;
-      blk.style.flex = String(b.width);
-      blk.dataset.width = String(b.width);
+      blk.style.flex = String(blockWidth);
+      blk.dataset.start = String(b.startFrequency);
+      blk.dataset.end = String(b.endFrequency);
       blk.innerHTML = `
-        <strong>${b.label}</strong>
-        <span>${b.width} MHz</span>
+        <strong>${b.owner}</strong>
+        <span>${formatBandwidth(blockWidth)} MHz</span>
       `;
-      blk.dataset.details = b.details || '';
+      const frequency = `${b.startFrequency} - ${b.endFrequency} MHz`
+        + (b.uplinkStartFrequency === undefined ? '' : ` downlink and ${b.uplinkStartFrequency} - ${b.uplinkEndFrequency} MHz uplink`);
+      const details = [
+        b.ownerLong && `<strong>Operated by:</strong><br>${b.ownerLong}`,
+        `<strong>Bandwidth:</strong><br>${formatBandwidth(blockWidth)} MHz (${frequency})`,
+        b.validUntil && `<strong>Valid until:</strong><br>${b.validUntil}`,
+        formatChannelDetails(b) && `<strong>Used for:</strong><br>${formatChannelDetails(b)}`,
+        typeof b.usedFor === 'string' && `<strong>Used for:</strong><br>${b.usedFor}`,
+        b.details && `<strong>Details:</strong><br>${b.details.replaceAll('\n', '<br>')}`
+      ].filter(Boolean);
+      blk.dataset.details = details.join('<br><br>');
       chart.appendChild(blk);
     });
 
     const start = document.createElement('div');
     start.className = 'frequency start';
-    start.textContent = band.freqStart;
+    start.textContent = formatBandFrequency(band, 'start');
     chart.appendChild(start);
 
     const end = document.createElement('div');
     end.className = 'frequency end';
-    end.textContent = band.freqEnd;
+    end.textContent = formatBandFrequency(band, 'end');
     chart.appendChild(end);
 
     const hint = document.createElement('p');
@@ -170,6 +196,13 @@ function renderChart(data) {
   applyChannelHighlight();
 }
 
+function formatBandFrequency(band, edge) {
+  const downlink = edge === 'start' ? band.startFrequency : band.endFrequency;
+  if (band.type !== 'FDD') return `${downlink} MHz`;
+  const uplink = edge === 'start' ? band.uplinkStartFrequency : band.uplinkEndFrequency;
+  return `${downlink} / ${uplink} MHz`;
+}
+
 function getChartData(data) {
   const totals = new Map();
   data
@@ -177,7 +210,8 @@ function getChartData(data) {
     .flatMap(band => band.blocks)
     .forEach(block => {
       if (carrierColors[block.type]) {
-        totals.set(block.label === 'T2' ? 'Tele2' : block.label, (totals.get(block.label === 'T2' ? 'Tele2' : block.label) || 0) + block.width);
+        const label = block.owner === 'T2' ? 'Tele2' : block.owner;
+        totals.set(label, (totals.get(label) || 0) + (block.endFrequency - block.startFrequency));
       }
     });
   return [...totals.entries()].map(([label, value]) => ({
@@ -248,8 +282,9 @@ function hasAlternateVersion(bandId) {
       const simplifiedBlock = simplifiedBand.blocks[index];
       return !simplifiedBlock
         || block.type !== simplifiedBlock.type
-        || block.label !== simplifiedBlock.label
-        || block.width !== simplifiedBlock.width;
+        || block.owner !== simplifiedBlock.owner
+        || block.startFrequency !== simplifiedBlock.startFrequency
+        || block.endFrequency !== simplifiedBlock.endFrequency;
     });
 }
 
