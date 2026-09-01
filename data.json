@@ -474,7 +474,7 @@
   },
   {
     "id": "700",
-    "title": "Band B28, n28 700 MHz FDD)",
+    "title": "Band B28, n28 (700 MHz FDD)",
     "type": "FDD",
     "startFrequency": 758,
     "endFrequency": 788,
