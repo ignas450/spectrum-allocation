@@ -88,7 +88,7 @@
         "usedFor": {
           "earfcns": [1348]
         },
-        "details": "20 MHz for 4G LTE, 0.2 unused pretty much"
+        "details": "20 MHz for 4G LTE, 0.2 MHz at the end unused"
       },
       {
         "type": "tele2",
